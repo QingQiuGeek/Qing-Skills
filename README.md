@@ -37,6 +37,9 @@ Qing-Skills 是面向 AI 编码助手（如 Claude Code）的技能仓库，每�
 
 编码阶段遵循**一次只动一个模块，做完先让用户验收，通过后再进入下一个**；交付时给出可复核的证据，而不是一句「已完成」。
 
+本 skill 只管流程与文档，不提供具体技术知识：动手前先复用环境里已有的专项 skill（组件库、Tailwind、React 性能等），
+没有再按项目现有约定自行判断，不为此引入新技术栈；视觉方向始终以 `visual.md` / `design.md` 为准。
+
 **适用场景**：启动前端项目 / 新页面 / 新功能，或需要编写、维护上述规格文档时。不适用于纯后端、脚本等无 UI 任务。
 
 **目录结构**：
@@ -90,6 +93,8 @@ The six documents each own exactly one concern (write each thing once, reference
 Typical workflow: `prd → visual → design → ui-patterns → page-specs (+ avoid throughout) → build → accept`.
 
 During implementation: **one module at a time, user acceptance before moving to the next**. Deliverables come with verifiable evidence, not just "done".
+
+This skill owns process and docs only, not domain technical knowledge: reuse an existing domain-specific skill (component library, Tailwind, React performance, etc.) when one is available, otherwise follow the project's existing conventions instead of pulling in a new stack. Visual direction always comes from `visual.md` / `design.md`.
 
 **When to use**: starting a frontend project, page, or feature; writing or maintaining the spec docs above. Not for backend-only, scripting, or other non-UI work.
 
