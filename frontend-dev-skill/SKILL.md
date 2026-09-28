@@ -1,6 +1,6 @@
 ---
 name: frontend-dev-skill
-description: Spec-driven frontend work — write and maintain prd / visual / design / ui-patterns / page-specs / avoid under frontend-dev-docs/, gate coding on them, then implement and verify module by module. Use when starting a frontend project, page, or feature; when the user asks for any of those docs; or when UI work is about to begin and the specs are missing. Not for backend-only, script, or non-UI tasks.
+description: Spec-driven frontend development — maintain prd / visual / design / ui-patterns / page-specs / avoid under frontend-dev-docs/, then build and verify module by module against them. Use when starting a frontend project, page, or feature, or when the user asks for any of those docs. Not for backend-only or non-UI tasks.
 metadata:
   short-description: Spec-driven frontend docs, build, and acceptance
 ---
@@ -12,6 +12,12 @@ metadata:
 
 六份文档各有唯一职责，**一件事只写在一份文档里**，其它文档只引用不复述——复述必然会漂移。
 
+```text
+prd.md ──→ visual.md ──→ design.md ──→ ui-patterns.md ──→ page-specs.md
+（只能引用上游，不能把上游内容抄下来；具体数值只在 design.md 定义一次）
+avoid.md：贯穿全部，只写「不要做什么」
+```
+
 ## 何时用
 
 - 启动前端项目、新页面或新功能。
@@ -22,12 +28,23 @@ metadata:
 
 ## 硬门槛：先有文档，再写代码
 
-1. 确认文档目录。默认项目根下的 `frontend-dev-docs/`；若项目已经有一套同类目录（如 `docs/`），**先问用户是沿用还是新建**，不要默默开第二套。
+1. 确认文档目录。默认项目根下的 `frontend-dev-docs/`；若项目已经有一套同类目录，**则先问用户是沿用还是新建**，不要默默开第二套。
 2. 清点缺哪几份。缺的先用 `references/` 里的骨架建出来。
 3. 建之前把需要用户拍板的问题**一次问完**（目标用户、范围、技术栈、是否要 i18n、要不要登录…），别反复打断。
    自己能定的默认值先填好，并在文档里标成「假设：…（待确认）」，让用户一次看到全部待确认项。
 4. 六份齐了（至少本次要动到的部分齐了），再开始编码。
 5. 不要「先写代码，回头补文档」。
+
+**本次要动到哪几份**（按任务取最小集，不要为凑顺序空转）：
+
+| 任务             | 要读 / 要更新的文档                                    |
+| ---------------- | ------------------------------------------------------ |
+| 新项目           | 六份全要                                               |
+| 只加或改一个页面 | `page-specs.md`（引用 `design.md` / `ui-patterns.md`）  |
+| 只改视觉         | `visual.md` + `design.md` + `avoid.md`                  |
+
+**接手已有项目**：`frontend-dev-docs/` 已存在时，先抽查文档与代码是否漂移（若干功能、页面、令牌两边比对）；
+只是缺几块就增量补齐；已明显落后或方向已变，就重写对应文档（判据见「变更回写」）。
 
 例外：用户明确说只要原型、不要文档，就按用户说的做，并在交付时点出文档缺口与影响。
 
@@ -38,7 +55,7 @@ metadata:
 | `prd.md`         | 做什么                 | 定位、目标用户、用户问题、核心场景、功能清单、用户流程、页面/功能列表、业务规则、技术栈、API/数据需求、约束与非目标                     | 像素、色值、类名、目录结构     |
 | `visual.md`      | 长什么感觉             | 视觉方向、品牌气质、设计关键词、视觉层级、布局倾向、参考站与截图、差异化、明确不追求的风格                                              | 组件 API、目录结构、具体令牌值 |
 | `design.md`      | 具体怎么设计并保持统一 | 布局、尺寸、颜色、字体、间距、圆角、边框、阴影、响应式、主题、动效、图标                                                                | 业务规则、页面级细节           |
-| `ui-patterns.md` | UI 怎么搭              | UI 层级、Tokens → Components → Blocks → Pages、目录结构、组件规范、Block 规范、复用规则、状态规范、导航交互模式、路由实现规则、通用布局 | 单页细节、具体文案             |
+| `ui-patterns.md` | UI 怎么搭              | UI 层级、Tokens → Components → Blocks → Pages、目录结构、组件规范、Block 规范、复用规则、状态规范、导航交互模式、路由实现规则、通用布局、文案规范 | 单页细节、具体文案             |
 | `page-specs.md`  | 每个页面具体怎么搭     | 每页的 Route、内容、结构、用到的 Components/Blocks、核心操作、数据、状态、响应式、页面间跳转、验收点                                    | 跨页通用规则（放 ui-patterns） |
 | `avoid.md`       | 什么不要做             | 禁止的视觉风格、UI/组件/布局/内容反模式、AI 常见问题                                                                                    | 正向规范（放另外五份）         |
 
@@ -75,6 +92,9 @@ metadata:
 
 改完行为就回写对应文档，别让文档落后于代码。
 
+**增量改还是重写**：小改动就地更新对应小节；一旦方向变了（视觉方向、分层模型、路由形态、业务范围），
+就重写那一份——在旧方向上打补丁只会累积出第二套事实。
+
 | 改了什么                                                | 回写             |
 | ------------------------------------------------------- | ---------------- |
 | 功能增删、业务规则、接口或字段、数据模型、业务码        | `prd.md`         |
@@ -82,6 +102,7 @@ metadata:
 | 颜色、字号、间距、圆角、阴影、断点、动效                | `design.md`      |
 | 目录结构、组件/Block 规范、导航交互、路由规则、状态规范 | `ui-patterns.md` |
 | 页面结构、状态、响应式、跳转、验收点                    | `page-specs.md`  |
+| 文案规范、控件命名、错误与空态用语                      | `ui-patterns.md` |
 | 新踩到的反模式、AI 通病                                 | `avoid.md`       |
 
 ## 执行与验收
