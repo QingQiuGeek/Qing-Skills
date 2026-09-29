@@ -33,7 +33,7 @@ Qing-Skills 是面向 AI 编码助手（如 Claude Code）的技能仓库，每�
 | `page-specs.md` | 每个页面怎么搭：Route、结构、状态、跳转、验收点 |
 | `avoid.md` | 什么不要做：反模式清单、默认套路、AI 常见问题 |
 
-典型工作流：`prd → visual → design → ui-patterns → page-specs（+ avoid 贯穿）→ build → accept`。
+典型工作流：`prd → visual → design → ui-patterns → page-specs（+ avoid 贯穿）→ accept（先搭代码，再整体验收）`。
 
 编码阶段遵循**一次只动一个模块，做完先让用户验收，通过后再进入下一个**；交付时给出可复核的证据，而不是一句「已完成」。
 
@@ -90,7 +90,7 @@ The six documents each own exactly one concern (write each thing once, reference
 | `page-specs.md` | How to build each page: route, structure, states, navigation, acceptance points |
 | `avoid.md` | What NOT to do: anti-patterns, default tropes, common AI pitfalls |
 
-Typical workflow: `prd → visual → design → ui-patterns → page-specs (+ avoid throughout) → build → accept`.
+Typical workflow: `prd → visual → design → ui-patterns → page-specs (+ avoid throughout) → accept (build, then acceptance)`.
 
 During implementation: **one module at a time, user acceptance before moving to the next**. Deliverables come with verifiable evidence, not just "done".
 
