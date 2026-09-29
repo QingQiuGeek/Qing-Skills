@@ -1,4 +1,0 @@
-interface:
-  display_name: 'Frontend Dev Skill'
-  short_description: 'Spec-driven frontend docs, build, and acceptance'
-  default_prompt: 'Use $frontend-dev-skill to write the six spec docs under frontend-dev-docs/ and implement against them.'

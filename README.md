@@ -2,9 +2,9 @@
 
 **语言 / Language**: [简体中文](#中文介绍) | [English](#english)
 
-> 一个持续扩展的 Agent Skill 集合。目前包含 `frontend-dev-skill`，后续会增加更多 skill。
+> 一个持续扩展的 Agent Skill 集合。目前包含 `frontend-dev`，后续会增加更多 skill。
 >
-> A growing collection of Agent Skills. Currently contains `frontend-dev-skill`; more skills will be added over time.
+> A growing collection of Agent Skills. Currently contains `frontend-dev`; more skills will be added over time.
 
 ---
 
@@ -14,9 +14,18 @@
 
 Qing-Skills 是面向 AI 编码助手（如 Claude Code）的技能仓库，每个 skill 封装一套可复用的工作方法论，让 AI 在处理特定类型任务时遵循统一的流程与质量标准。
 
+### 安装
+
+```bash
+npx skills add https://github.com/QingQiuGeek/Qing-Skills -g -y
+```
+
+- `-g` 装到用户级技能目录（所有项目可用）；不加则只装进当前项目。
+- `-y` 跳过交互、直接安装全部；不加会逐个询问要装哪些 skill。
+
 ### 已收录的 Skill
 
-#### frontend-dev-skill — 前端文档驱动开发
+#### frontend-dev — 前端文档驱动开发
 
 把「做什么 / 长什么感觉 / 怎么设计 / UI 怎么搭 / 每个页面怎么搭 / 什么不要做」从口头讨论固化成六份文档，让编码有唯一事实源，并在需求变化后持续回写。
 
@@ -45,7 +54,7 @@ Qing-Skills 是面向 AI 编码助手（如 Claude Code）的技能仓库，每�
 **目录结构**：
 
 ```
-frontend-dev-skill/
+frontend-dev/
 ├── SKILL.md                 # skill 入口：使用纪律、文档分工、变更回写规则
 ├── agents/
 │   └── openai.yaml          # agent 接口定义
@@ -71,9 +80,18 @@ frontend-dev-skill/
 
 Qing-Skills is a repository of Agent Skills for AI coding assistants (such as Claude Code). Each skill packages a reusable methodology, so the AI follows a consistent workflow and quality bar for a specific type of task.
 
+### Install
+
+```bash
+npx skills add https://github.com/QingQiuGeek/Qing-Skills -g -y
+```
+
+- `-g` installs to the user-level skills directory (usable in every project); drop it to install into the current project only.
+- `-y` skips the prompts and installs everything; drop it to pick which skills to install.
+
 ### Available Skills
 
-#### frontend-dev-skill — Spec-Driven Frontend Development
+#### frontend-dev — Spec-Driven Frontend Development
 
 Turns "what to build / how it should feel / how to design it / how to structure the UI / how to build each page / what to avoid" from verbal discussion into six spec documents, giving implementation a single source of truth that is kept in sync as requirements change.
 
@@ -101,7 +119,7 @@ This skill owns process and docs only, not domain technical knowledge: reuse an 
 **Directory layout**:
 
 ```
-frontend-dev-skill/
+frontend-dev/
 ├── SKILL.md                 # Skill entry point: discipline, doc responsibilities, write-back rules
 ├── agents/
 │   └── openai.yaml          # Agent interface definition

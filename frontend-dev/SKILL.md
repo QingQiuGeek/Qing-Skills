@@ -1,7 +1,8 @@
 ---
-name: frontend-dev-skill
+name: frontend-dev
 description: Spec-driven frontend development — maintain prd / visual / design / ui-patterns / page-specs / avoid under frontend-dev-docs/, then build and verify module by module against them. Use when starting a frontend project, page, or feature, or when the user asks for any of those docs. Not for backend-only or non-UI tasks.
 metadata:
+  author: 'https://github.com/QingQiuGeek'
   short-description: Spec-driven frontend docs, build, and acceptance
 ---
 
