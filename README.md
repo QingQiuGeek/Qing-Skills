@@ -26,10 +26,10 @@ Qing-Skills 是面向 AI 编码助手（如 Claude Code）的技能仓库，每�
 
 | 文件 | 回答的问题 |
 | --- | --- |
-| `prd.md` | 做什么：定位、目标用户、功能清单、业务规则、技术栈 |
+| `prd.md` | 做什么：定位、目标用户、站点页面层级、功能清单、业务规则、技术栈 |
 | `visual.md` | 长什么感觉：视觉方向、品牌气质、参考站、不追求的风格 |
 | `design.md` | 具体怎么设计：颜色、字体、间距、圆角、阴影、响应式（含适配优先级）、主题 |
-| `ui-patterns.md` | UI 怎么搭：Tokens → Components → Blocks → Pages、目录结构、组件规范、文案规范 |
+| `ui-patterns.md` | UI 怎么搭：Tokens → Components → Blocks → Pages、目录结构、组件规范、导航信息架构与 URL 约定、文案规范 |
 | `page-specs.md` | 每个页面怎么搭：Route、结构、状态、跳转、验收点 |
 | `avoid.md` | 什么不要做：反模式清单、默认套路、AI 常见问题 |
 
@@ -83,10 +83,10 @@ The six documents each own exactly one concern (write each thing once, reference
 
 | File | Question it answers |
 | --- | --- |
-| `prd.md` | What to build: positioning, target users, feature list, business rules, tech stack |
+| `prd.md` | What to build: positioning, target users, page hierarchy, feature list, business rules, tech stack |
 | `visual.md` | How it should feel: visual direction, brand tone, reference sites, styles to avoid |
 | `design.md` | How to design it: colors, typography, spacing, radii, shadows, responsive (with adaptation priority), theming |
-| `ui-patterns.md` | How to structure the UI: Tokens → Components → Blocks → Pages, directory layout, component specs, copy rules |
+| `ui-patterns.md` | How to structure the UI: Tokens → Components → Blocks → Pages, directory layout, component specs, navigation IA and URL conventions, copy rules |
 | `page-specs.md` | How to build each page: route, structure, states, navigation, acceptance points |
 | `avoid.md` | What NOT to do: anti-patterns, default tropes, common AI pitfalls |
 
